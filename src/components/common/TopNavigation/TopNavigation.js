@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import logo from "../../assets/images/kotan_logo.jpeg";
+import logo from "../../../assets/images/kotan_logo.jpeg";
 import "./TopNavigation.css"
 
 const TopNavigation = () => {
