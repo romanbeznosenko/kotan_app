@@ -1,0 +1,231 @@
+/* Logo Styles */
+.logo {
+    border-radius: 100%;
+    height: 100px;
+    width: auto;
+    object-fit: cover;
+    margin-right: 100px;
+}
+
+@media (max-width: 991px) {
+    .logo {
+        height: 50px;
+        width: 50px;
+        margin-right: 15px;
+    }
+
+    .navbar-collapse.show {
+        width: max-content !important;
+        flex-basis: 1 !important;
+    }
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    margin-left: 15px;
+    color: transparent;
+    border: 0px;
+}
+
+.burger-menu {
+    color: white;
+    font-size: 35px;
+}
+
+.menu-icon {
+    font-size: 35px;
+    color: white;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: rotate(0deg);
+}
+
+.menu-icon-open {
+    transform: rotate(90deg);
+}
+
+/* Navbar Base Styles */
+.navbar {
+    background-color: #012A97;
+    padding-left: 10px;
+}
+
+/* Desktop Navigation Links */
+.navbar .nav-link {
+    padding: 10px 30px !important;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Active/Hover link background */
+.navbar .nav-link.active,
+.navbar .nav-link:focus,
+.navbar .nav-link:hover {
+    background-color: white;
+    color: #000 !important;
+}
+
+/* Desktop Dropdown menu container */
+.navbar .dropdown-menu {
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Desktop Dropdown items */
+.navbar .dropdown-item {
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Desktop Dropdown hover + focus effect */
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+/* Active desktop dropdown item */
+.navbar .dropdown-item.active {
+    background-color: white;
+    color: #000;
+}
+
+/* Mobile Sidebar Overlay */
+.mobile-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-sidebar {
+    width: 400px;
+    height: 100vh;
+    background: #012A97;
+    color: white;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.mobile-sidebar-overlay.active .mobile-sidebar {
+    transform: translateX(0);
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+/* Mobile Sidebar Navigation */
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav .nav-item {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.sidebar-nav .nav-link {
+    padding: 10px 30px !important;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 18px;
+    color: white;
+    font-family: 'Urbanist', sans-serif;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link:focus {
+    background-color: white;
+    color: #000 !important;
+    text-decoration: none;
+}
+
+/* Mobile Sidebar Dropdown Menu */
+.sidebar-nav .dropdown-menu {
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Urbanist', sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sidebar-nav .dropdown-item {
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-nav .dropdown-item:hover,
+.sidebar-nav .dropdown-item:focus {
+    background-color: #f8f9fa;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Hide sidebar on desktop */
+@media (min-width: 992px) {
+    .mobile-sidebar-overlay {
+        display: none;
+    }
+}
+
+/* Responsive sidebar width */
+@media (max-width: 480px) {
+    .mobile-sidebar {
+        width: 100%;
+    }
+}
