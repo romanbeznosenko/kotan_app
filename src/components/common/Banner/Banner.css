@@ -262,7 +262,7 @@
     }
 
     .banner p:first-child {
-        margin-bottom: 40px; /* Reduced gap after main text */
+        margin-bottom: 20px; /* Reduced gap after main text */
     }
 
     .banner .bottom {
@@ -291,7 +291,7 @@
         bottom: 10px;
         right: 10px;
         gap: 10px;
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: flex-end;
     }
 
