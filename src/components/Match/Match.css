@@ -1,0 +1,95 @@
+.div-match {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 20px;
+    width: fit-content;
+    /* background-color removed - now controlled by JavaScript variable */
+}
+
+.div-match-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.match-img {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    border-radius: 100%;
+}
+
+.match-vs-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Urbanist', sans-serif;
+    margin: 0;
+}
+
+.div-match-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Urbanist', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.div-match-text span {
+    display: block;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .div-match {
+        gap: 20px;
+        padding: 30px 15px;
+    }
+    
+    .match-img {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .match-vs-text {
+        font-size: 1.2rem;
+    }
+    
+    .div-match-text {
+        font-size: 1.2rem;
+    }
+    
+    .div-match-logos {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .div-match {
+        gap: 15px;
+        padding: 20px 10px;
+    }
+    
+    .match-img {
+        height: 80px;
+        width: 80px;
+    }
+    
+    .match-vs-text {
+        font-size: 1rem;
+    }
+    
+    .div-match-text {
+        font-size: 1rem;
+    }
+    
+    .div-match-logos {
+        gap: 10px;
+    }
+}

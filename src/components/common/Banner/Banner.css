@@ -1,0 +1,381 @@
+/* Banner Container */
+.banner {
+    background: #F2F4F8;
+    color: #012A97;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: 'Urbanist', sans-serif;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Banner Text Styling - Responsive font size */
+.banner p {
+    margin: 20px 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.banner p:first-child {
+    font-size: clamp(0.7rem, 3.5vw, 2.5rem);
+    text-transform: uppercase;
+    letter-spacing: clamp(0.01em, 0.5vw, 0.05em);
+    white-space: nowrap;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.banner p:nth-child(3) {
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    color: #FBBD61;
+    margin-top: 30px;
+}
+
+.banner p:last-child {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    background: linear-gradient(45deg, #F33736, #8B55F6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 40px;
+    font-weight: 900;
+}
+
+/* KIDS Container */
+.kids-container {
+    display: inline;
+    margin: 0 5px;
+}
+
+.kids-text {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: bold;
+    font-size: inherit;
+    display: inline;
+    letter-spacing: 0.05em;
+}
+
+/* Individual KIDS letter styling */
+.kids-text .letter-k {
+    color: #F33736;
+    display: inline;
+    transition: all 0.3s ease;
+}
+
+.kids-text .letter-i {
+    color: #FBBD61;
+    display: inline;
+    transition: all 0.3s ease;
+}
+
+.kids-text .letter-d {
+    color: #07BC65;
+    display: inline;
+    transition: all 0.3s ease;
+}
+
+.kids-text .letter-s {
+    color: #8B55F6;
+    display: inline;
+    transition: all 0.3s ease;
+}
+
+/* GIRLS Container */
+.girls-container {
+    display: inline;
+    margin: 0 5px;
+}
+
+.grils-text {
+    color: #F869C2;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline;
+}
+
+/* Banner Photos */
+.banner .banner-photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0 120px 0; /* Added bottom margin to prevent overlap */
+    flex-wrap: wrap;
+}
+
+.banner .banner-photos img {
+    width: 345px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.banner .banner-photos img:hover {
+    transform: scale(1.05);
+}
+
+/* Bottom Section - Fixed positioning */
+.banner .bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    z-index: 10;
+}
+
+.banner .bottom img {
+    height: 86px;
+    width: 86px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.banner .bottom .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+}
+
+.banner .bottom p:first-of-type {
+    color: #EE3B39;
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.banner .bottom p:last-of-type {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: white;
+    font-weight: 900;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Hover Effects - Individual letters/words only */
+.kids-text .letter-k:hover {
+    text-shadow: 2px 2px 4px rgba(243, 55, 54, 0.5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.kids-text .letter-i:hover {
+    text-shadow: 2px 2px 4px rgba(251, 189, 97, 0.5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.kids-text .letter-d:hover {
+    text-shadow: 2px 2px 4px rgba(7, 188, 101, 0.5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.kids-text .letter-s:hover {
+    text-shadow: 2px 2px 4px rgba(139, 85, 246, 0.5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.grils-text:hover {
+    text-shadow: 2px 2px 4px rgba(248, 105, 194, 0.5);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.banner .bottom img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.banner .bottom p:first-of-type:hover {
+    text-shadow: 2px 2px 6px rgba(238, 59, 57, 0.6);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.banner .bottom p:last-of-type:hover {
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Animation for entrance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner p {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.banner p:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.banner p:last-child {
+    animation-delay: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .banner .banner-photos img {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        padding: 40px 15px;
+        min-height: 200px; /* Reduced from 400px */
+    }
+
+    .banner .banner-photos {
+        display: none;
+    }
+
+    .banner p:first-child {
+        margin-bottom: 20px; /* Reduced gap after main text */
+    }
+
+    .banner .bottom {
+        bottom: 15px;
+        right: 15px;
+        gap: 15px;
+    }
+
+    .banner .bottom img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .kids-container,
+    .girls-container {
+        margin: 0 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner .banner-photos {
+        display: none;
+    }
+
+    .banner .bottom {
+        bottom: 10px;
+        right: 10px;
+        gap: 10px;
+        /* flex-direction: column; */
+        align-items: flex-end;
+    }
+
+    .banner .bottom img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .banner .bottom .text-content {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .banner .bottom p:first-of-type {
+        font-size: 0.6rem;
+    }
+
+    .banner .bottom p:last-of-type {
+        font-size: 0.7rem;
+    }
+
+    .kids-container,
+    .girls-container {
+        margin: 0 2px;
+    }
+}
+
+/* Very small screens - ensure text doesn't break */
+@media (max-width: 390px) {
+    .banner {
+        padding: 40px 5px;
+    }
+
+    .banner p:first-child {
+        font-size: 0.75rem;
+        letter-spacing: 0.01em;
+        padding: 0 5px;
+    }
+
+    .banner .bottom {
+        bottom: 8px;
+        right: 8px;
+        gap: 8px;
+    }
+
+    .banner .bottom img {
+        height: 35px;
+        width: 35px;
+    }
+
+    .kids-container,
+    .girls-container {
+        margin: 0 1px;
+    }
+}
+
+@media (max-width: 320px) {
+    .banner p:first-child {
+        font-size: 0.65rem;
+        letter-spacing: 0.005em;
+        padding: 0 2px;
+    }
+
+    .banner .bottom {
+        bottom: 5px;
+        right: 5px;
+        gap: 5px;
+    }
+
+    .banner .bottom img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .banner .bottom p:first-of-type {
+        font-size: 0.5rem;
+    }
+
+    .banner .bottom p:last-of-type {
+        font-size: 0.6rem;
+    }
+
+    .kids-container,
+    .girls-container {
+        margin: 0;
+    }
+}
