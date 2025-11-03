@@ -1,176 +1,148 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import logo from "../../../assets/images/kotan_logo.jpeg";
-import "./TopNavigation.css"
+import "./TopNavigation.css";
 
-const TopNavigation = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isSquadOpen, setIsSquadOpen] = useState(false);
-    const [isMobileSquadOpen, setIsMobileSquadOpen] = useState(false);
+const TopNavigation = ({ onNavigate, currentPage }) => {
+  const [showTeamsDropdown, setShowTeamsDropdown] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+  const teams = [
+    "SENIORZY",
+    "TRAMPKARZ",
+    "MŁODZIK",
+    "ORLIK",
+    "ŻAK",
+    "SENIORKI",
+    "MŁODZICZKI",
+    "ORLICZKI"
+  ];
 
-    const toggleSquad = () => {
-        setIsSquadOpen(!isSquadOpen);
-    };
-
-    const toggleMobileSquad = () => {
-        setIsMobileSquadOpen(!isMobileSquadOpen);
-    };
-
-    const navItems = [
-        {
-            label: "Zespoły",
-            isDropDown: true,
-            dropdownListItems: [
-                { label: "Seniorzy", href: "#squad/seniors" },
-                { label: "Trampkarz", href: "#squad/trampkarz" },
-                { label: "Młodzik", href: "#squad/mlodzik" },
-                { label: "Orlik", href: "#squad/orlik" },
-                { label: "Żak", href: "#squad/zak" },
-                { label: "Seniorki", href: "#squad/seniorki" },
-                { label: "Młodziczki", href: "#squad/mlodziczki" },
-                { label: "Orliczki", href: "#squad/orliczki" }
-            ]
-        },
-        { label: "Aktualności", href: "#news" },
-        { label: "Rozgrywki", href: "#matches" },
-        { label: "Galeria", href: "#galery" }
-    ];
-
-    return (
-        <>
-            <nav className="navbar navbar-expand-lg navbar-light">
-                <div className="container-fluid">
-                    <div className="d-flex align-items-center">
-                        <a className="navbar-brand" href="#">
-                            <img
-                                src={logo}
-                                alt="Kotan App Logo"
-                                className="d-inline-block align-text-top logo"
-                            />
-                        </a>
-                        <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            onClick={toggleMenu}>
-                            <div className={`menu-icon ${isMenuOpen ? 'menu-icon-open' : ''}`}>
-                                {isMenuOpen ? (
-                                    <FaTimes />
-                                ) : (
-                                    <FaBars />
-                                )}
-                            </div>
-
-                        </button>
-                    </div>
-
-                    <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''} d-none d-lg-flex`} id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            {navItems.map((item, index) => {
-                                if (item.label === "Zespoły" && item.isDropDown) {
-                                    return (
-                                        <li key={index} className="nav-item dropdown">
-                                            <a
-                                                className="nav-link dropdown-toggle"
-                                                style={{ textTransform: 'uppercase' }}
-                                                href="#"
-                                                role="button"
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    toggleSquad();
-                                                }}
-                                                aria-expanded={isSquadOpen}
-                                            >
-                                                {item.label}
-                                            </a>
-                                            <ul className={`dropdown-menu ${isSquadOpen ? 'show' : ''}`}>
-                                                {item.dropdownListItems.map((dropdownItem, dropIndex) => (
-                                                    <li key={dropIndex}>
-                                                        <a className="dropdown-item" href={dropdownItem.href} style={{ textTransform: 'uppercase' }}>
-                                                            {dropdownItem.label}
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </li>
-                                    );
-                                }
-
-                                return (
-                                    <li key={index} className="nav-item">
-                                        <a className="nav-link" href={item.href} style={{ textTransform: 'uppercase' }}>
-                                            {item.label}
-                                        </a>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <div className={`mobile-sidebar-overlay ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-                <div className="mobile-sidebar" onClick={(e) => e.stopPropagation()}>
-                    <div className="sidebar-header">
-                        <img src={logo} alt="Kotan Logo" className="sidebar-logo" />
-                        <button className="close-btn" onClick={toggleMenu}>
-                            <FaTimes />
-                        </button>
-                    </div>
-
-
-                    <nav className="sidebar-nav">
-                        {navItems.map((item, index) => {
-                            if (item.label === "Zespoły" && item.isDropDown) {
-                                return (
-                                    <li key={index} className="nav-item dropdown">
-                                        <a
-                                            className="nav-link dropdown-toggle"
-                                            style={{ textTransform: 'uppercase' }}
-                                            href="#"
-                                            role="button"
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                toggleSquad();
-                                            }}
-                                            aria-expanded={isSquadOpen}
-                                        >
-                                            {item.label}
-                                        </a>
-                                        <ul className={`dropdown-menu ${isSquadOpen ? 'show' : ''}`}>
-                                            {item.dropdownListItems.map((dropdownItem, dropIndex) => (
-                                                <li key={dropIndex}>
-                                                    <a className="dropdown-item" href={dropdownItem.href} style={{ textTransform: 'uppercase' }}>
-                                                        {dropdownItem.label}
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </li>
-                                );
-                            }
-
-                            return (
-                                <li key={index} className="nav-item">
-                                    <a className="nav-link" href={item.href} style={{ textTransform: 'uppercase' }}>
-                                        {item.label}
-                                    </a>
-                                </li>
-                            );
-                        })}
-                    </nav>
-                </div>
+  return (
+    <nav className="navigation-sticky">
+      <div className="navigation-container">
+        <div className="navigation-content">
+          {/* Logo */}
+          <button 
+            onClick={() => onNavigate('home')} 
+            className="logo-button"
+          >
+            <div className="logo-circle">
+              <img src={logo} alt="Kotan Logo" className="logo-image" />
             </div>
-        </>
-    );
+            <div className="logo-text">
+              <div className="logo-title">KOTAN OZORKÓW</div>
+            </div>
+          </button>
+
+          {/* Desktop Navigation */}
+          <div className="desktop-nav">
+            <button 
+              onClick={() => onNavigate('home')}
+              className={`nav-button ${currentPage === 'home' ? 'nav-button-active' : ''}`}
+            >
+              Strona główna
+            </button>
+
+            {/* Teams Dropdown */}
+            <div 
+              className="dropdown-wrapper"
+              onMouseEnter={() => setShowTeamsDropdown(true)}
+              onMouseLeave={() => setShowTeamsDropdown(false)}
+            >
+              <button 
+                onClick={() => onNavigate('teams')}
+                className={`nav-button ${currentPage === 'teams' || showTeamsDropdown ? 'nav-button-active' : ''}`}
+              >
+                Zespoły
+              </button>
+
+              {showTeamsDropdown && (
+                <div className="dropdown-menu">
+                  {teams.map((team, index) => (
+                    <button
+                      key={index}
+                      onClick={() => onNavigate('teams')}
+                      className="dropdown-item"
+                    >
+                      {team}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <button 
+              onClick={() => onNavigate('news')}
+              className={`nav-button ${currentPage === 'news' ? 'nav-button-active' : ''}`}
+            >
+              Aktualności
+            </button>
+
+            <button 
+              onClick={() => onNavigate('matches')}
+              className={`nav-button ${currentPage === 'matches' ? 'nav-button-active' : ''}`}
+            >
+              Rozgrywki
+            </button>
+
+            <button 
+              onClick={() => onNavigate('gallery')}
+              className={`nav-button ${currentPage === 'gallery' ? 'nav-button-active' : ''}`}
+            >
+              Galeria
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="mobile-menu-button"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="mobile-nav">
+            <div className="mobile-nav-content">
+              <button 
+                onClick={() => { onNavigate('home'); setMobileMenuOpen(false); }}
+                className={`mobile-nav-button ${currentPage === 'home' ? 'mobile-nav-button-active' : ''}`}
+              >
+                Strona główna
+              </button>
+              <button 
+                onClick={() => { onNavigate('teams'); setMobileMenuOpen(false); }}
+                className={`mobile-nav-button ${currentPage === 'teams' ? 'mobile-nav-button-active' : ''}`}
+              >
+                Zespoły
+              </button>
+              <button 
+                onClick={() => { onNavigate('news'); setMobileMenuOpen(false); }}
+                className={`mobile-nav-button ${currentPage === 'news' ? 'mobile-nav-button-active' : ''}`}
+              >
+                Aktualności
+              </button>
+              <button 
+                onClick={() => { onNavigate('matches'); setMobileMenuOpen(false); }}
+                className={`mobile-nav-button ${currentPage === 'matches' ? 'mobile-nav-button-active' : ''}`}
+              >
+                Rozgrywki
+              </button>
+              <button 
+                onClick={() => { onNavigate('gallery'); setMobileMenuOpen(false); }}
+                className={`mobile-nav-button ${currentPage === 'gallery' ? 'mobile-nav-button-active' : ''}`}
+              >
+                Galeria
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
 };
 
 export default TopNavigation;

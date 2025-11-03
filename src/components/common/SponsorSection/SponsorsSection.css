@@ -1,0 +1,427 @@
+/* Sponsors Section */
+.sponsors-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.sponsors-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Section Header */
+.sponsors-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sponsors-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.sponsors-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem;
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Main Sponsors */
+.main-sponsors-wrapper {
+    margin-bottom: 4rem;
+}
+
+.main-sponsors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.main-sponsor-card {
+    position: relative;
+    background: white;
+    border-radius: 1.5rem;
+    padding: 3rem 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border: 2px solid transparent;
+    overflow: hidden;
+}
+
+.main-sponsor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #012A97, #FBBD61);
+}
+
+.main-sponsor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(1, 42, 151, 0.25);
+    border-color: #012A97;
+}
+
+.main-sponsor-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #012A97, #0441d4);
+    color: white;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-family: 'Urbanist', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.main-sponsor-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    margin-bottom: 1.5rem;
+}
+
+.main-sponsor-logo {
+    max-width: 100%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.main-sponsor-card:hover .main-sponsor-logo {
+    transform: scale(1.05);
+}
+
+.main-sponsor-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Other Sponsors Section */
+.other-sponsors-section {
+    margin-top: 4rem;
+}
+
+.other-sponsors-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 2rem;
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Sponsors Carousel */
+.sponsors-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sponsors-carousel {
+    flex: 1;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.sponsors-carousel-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.sponsor-slide {
+    flex: 0 0 auto;
+}
+
+/* Sponsor Logo Card */
+.sponsor-logo-link {
+    display: block;
+    text-decoration: none;
+}
+
+.sponsor-logo-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.sponsor-logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #012A97;
+}
+
+.sponsor-logo-image {
+    max-width: 100%;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.sponsor-logo-card:hover .sponsor-logo-image {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Carousel Buttons */
+.sponsors-carousel-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    color: #012A97;
+    border: 2px solid #012A97;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.sponsors-carousel-button:hover {
+    background-color: #012A97;
+    color: white;
+    transform: scale(1.1);
+}
+
+.carousel-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.carousel-indicator {
+    width: 2rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-indicator-active {
+    background-color: #012A97;
+    width: 3rem;
+}
+
+.carousel-indicator:hover {
+    background-color: #9ca3af;
+}
+
+/* Call to Action */
+.sponsors-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.sponsors-cta-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.sponsors-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #012A97, #0441d4);
+    color: white;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(1, 42, 151, 0.3);
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.sponsors-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(1, 42, 151, 0.4);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .sponsors-container {
+        padding: 0 1.5rem;
+    }
+
+    .sponsors-carousel-track {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .sponsors-section {
+        padding: 5rem 0;
+    }
+
+    .main-sponsors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sponsors-carousel-track {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .sponsors-section {
+        padding: 6rem 0;
+    }
+
+    .sponsors-container {
+        padding: 0 2rem;
+    }
+
+    .sponsors-title {
+        font-size: 2.5rem;
+    }
+
+    .sponsors-carousel-button {
+        display: flex;
+    }
+
+    .sponsors-carousel-track {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    .sponsors-title {
+        font-size: 1.5rem;
+    }
+
+    .sponsors-subtitle {
+        font-size: 1rem;
+    }
+
+    .main-sponsor-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .main-sponsor-name {
+        font-size: 1.25rem;
+    }
+
+    .other-sponsors-title {
+        font-size: 1.25rem;
+    }
+
+    .sponsor-logo-card {
+        padding: 1.5rem;
+        min-height: 100px;
+    }
+
+    .sponsor-logo-image {
+        max-height: 60px;
+    }
+
+    .sponsors-cta {
+        padding: 2rem 1rem;
+    }
+
+    .sponsors-cta-text {
+        font-size: 1.125rem;
+    }
+
+    .sponsors-carousel-track {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-sponsor-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.main-sponsor-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.main-sponsor-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sponsor-slide {
+    animation: slideIn 0.5s ease-out;
+}

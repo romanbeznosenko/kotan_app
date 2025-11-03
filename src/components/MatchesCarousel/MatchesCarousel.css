@@ -1,0 +1,399 @@
+/* Matches Carousel Section */
+.matches-carousel-section {
+    padding: 4rem 0;
+    background-color: #F2F4F8;
+}
+
+.matches-carousel-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Section Header */
+.matches-carousel-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.matches-carousel-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.matches-carousel-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem;
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.carousel-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Carousel Buttons - Desktop */
+.carousel-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    color: #012A97;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-button:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    background-color: #012A97;
+    color: white;
+    transform: scale(1.1);
+}
+
+.carousel-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Carousel Indicators - Desktop */
+.carousel-indicators {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.carousel-indicator {
+    width: 2rem;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-indicator-active {
+    background-color: #012A97;
+    width: 3rem;
+}
+
+.carousel-indicator:hover {
+    background-color: #9ca3af;
+}
+
+/* Mobile Navigation */
+.carousel-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-mobile-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    color: #012A97;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-mobile-button:hover {
+    background-color: #012A97;
+    color: white;
+    transform: scale(1.05);
+}
+
+.carousel-mobile-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.carousel-mobile-indicators {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.carousel-mobile-indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+    background-color: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-mobile-indicator-active {
+    background-color: #012A97;
+    width: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+/* Match Card */
+.match-card {
+    width: auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #f3f4f6;
+    transition: all 0.3s ease;
+}
+
+.match-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: rgba(1, 42, 151, 0.2);
+    transform: translateY(-4px);
+}
+
+.match-card-header {
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.match-league {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    text-align: center;
+    margin: 0;
+    font-family: 'Urbanist', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.match-card-body {
+    padding: 1.5rem;
+}
+
+/* Teams Section */
+.match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-section {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.team-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.team-logo-container {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid #f3f4f6;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.match-card:hover .team-logo-container {
+    border-color: rgba(1, 42, 151, 0.3);
+}
+
+.team-logo-primary {
+    background-color: #012A97;
+}
+
+.team-logo-secondary {
+    background-color: #f3f4f6;
+}
+
+.team-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-name {
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 0.95rem;
+}
+
+.vs-section {
+    flex-shrink: 0;
+}
+
+.vs-container {
+    padding: 0.5rem 1rem;
+    background-color: #f9fafb;
+    border-radius: 0.75rem;
+}
+
+.vs-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #012A97;
+    font-family: 'Urbanist', sans-serif;
+}
+
+/* Match Info */
+.match-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.match-info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.match-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+    .matches-carousel-container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .matches-carousel-section {
+        padding: 5rem 0;
+    }
+
+    .carousel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carousel-mobile-nav {
+        display: none;
+    }
+
+    .carousel-indicators {
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    .matches-carousel-section {
+        padding: 6rem 0;
+    }
+
+    .matches-carousel-container {
+        padding: 0 1rem;
+    }
+
+    .matches-carousel-title {
+        font-size: 1.5rem;
+    }
+
+    .carousel-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .carousel-button {
+        display: flex;
+    }
+}
+
+/* Small screens - adjust sizing */
+@media (max-width: 480px) {
+    .matches-carousel-title {
+        font-size: 1.5rem;
+    }
+
+    .matches-carousel-subtitle {
+        font-size: 1rem;
+    }
+
+    .match-card-body {
+        padding: 1rem;
+    }
+
+    .team-logo-container {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .team-name {
+        font-size: 0.875rem;
+    }
+
+    .vs-text {
+        font-size: 1rem;
+    }
+
+    .match-info-item {
+        font-size: 0.75rem;
+    }
+}
+
+/* Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.match-card {
+    animation: slideIn 0.3s ease-out;
+}
