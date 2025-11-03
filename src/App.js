@@ -30,17 +30,10 @@ function App() {
         <Banner/>
         
         {/* Single Match Example */}
-        <Match/>
+        {/* <Match/> */}
         
         {/* Inline Matches Carousel - shows one match at a time with manual navigation */}
-        <GenericCarousel 
-          components={matchComponents}
-          itemsPerSlide={1}
-          title="Upcoming Matches"
-          autoSlide={false}
-          showIndicators={false}
-          showControls={true}
-        />
+        <GenericCarousel />
         
         <header className="App-header">
           <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet"/>

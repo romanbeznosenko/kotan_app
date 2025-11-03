@@ -6,6 +6,7 @@
     gap: 10px;
     padding: 40px 20px;
     width: fit-content;
+    border-radius: 25px;
     /* background-color removed - now controlled by JavaScript variable */
 }
 
