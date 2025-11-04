@@ -15,7 +15,7 @@ const matchesData = [
         team2Name: "UKS SMS",
         team1Logo: kotan_logo,
         team2Logo: uks_sms_logo,
-        date: "14.09.2025",
+        date: "14.09.2025 16:00",
         location: "Ozorków, ul. Leśna 1",
         color: "from-yellow-500/20 to-yellow-600/20",
         bgColor: "#FEF3C7"
@@ -27,7 +27,7 @@ const matchesData = [
         team2Name: "KSK OLIMPIA",
         team1Logo: kotan_logo,
         team2Logo: uks_sms_logo,
-        date: "23.10.2025",
+        date: "23.10.2025 16:00",
         location: "Ozorków, ul. Leśna 1",
         color: "from-pink-500/20 to-pink-600/20",
         bgColor: "#FCE7F3"
@@ -39,7 +39,7 @@ const matchesData = [
         team2Name: "UKS SMS",
         team1Logo: kotan_logo,
         team2Logo: uks_sms_logo,
-        date: "28.09.2025",
+        date: "28.09.2025 16:00",
         location: "Ozorków, ul. Leśna 1",
         color: "from-blue-500/20 to-blue-600/20",
         bgColor: "#DBEAFE"
@@ -51,7 +51,7 @@ const matchesData = [
         team2Name: "KSK OLIMPIA",
         team1Logo: kotan_logo,
         team2Logo: uks_sms_logo,
-        date: "05.11.2025",
+        date: "05.11.2025 16:00",
         location: "Ozorków, ul. Leśna 1",
         color: "from-purple-500/20 to-purple-600/20",
         bgColor: "#EDE9FE"
@@ -63,7 +63,7 @@ const matchesData = [
         team2Name: "UKS SMS",
         team1Logo: kotan_logo,
         team2Logo: uks_sms_logo,
-        date: "12.11.2025",
+        date: "12.11.2025 16:00",
         location: "Ozorków, ul. Leśna 1",
         color: "from-green-500/20 to-green-600/20",
         bgColor: "#D1FAE5"
@@ -75,7 +75,7 @@ const matchesData = [
         team2Name: "KSK OLIMPIA",
         team1Logo: kotan_logo,
         team2Logo: uks_sms_logo,
-        date: "19.11.2025",
+        date: "19.11.2025 16:00",
         location: "Ozorków, ul. Leśna 1",
         color: "from-red-500/20 to-red-600/20",
         bgColor: "#FEE2E2"
@@ -94,52 +94,51 @@ function TeamLogo({ logo, name, isPrimary }) {
 
 function MatchCard({ match }) {
     return (
-        <div className="match-card">
-            {/* League Badge */}
-            <div
-                className="match-card-header"
-                style={{ backgroundColor: match.bgColor }}
-            >
-                <p className="match-league">
-                    {match.league}
-                </p>
+        <div
+            className="match-detail-card"
+            style={{
+                background: `linear-gradient(135deg, ${match.bgColor}, ${match.bgColor}dd)`
+            }}
+        >
+            {/* League */}
+            <div className="match-detail-league">
+                <p className="match-detail-league-text">{match.league}</p>
             </div>
 
             {/* Teams */}
-            <div className="match-card-body">
-                <div className="match-teams">
-                    <div className="team-section">
-                        <TeamLogo logo={match.team1Logo} name={match.team1Name} isPrimary />
-                        <p className="team-name">{match.team1Name}</p>
-                    </div>
+            <div className="match-detail-teams">
+                <div className="match-detail-team">
+                    <TeamLogo logo={match.team1Logo} name={match.team1Name} isPrimary={true} />
+                    <p className="match-detail-team-name">{match.team1Name}</p>
+                </div>
 
-                    <div className="vs-section">
-                        <div className="vs-container">
-                            <span className="vs-text">VS</span>
-                        </div>
-                    </div>
-
-                    <div className="team-section">
-                        <TeamLogo logo={match.team2Logo} name={match.team2Name} />
-                        <p className="team-name">{match.team2Name}</p>
+                <div className="match-detail-vs">
+                    <div className="match-detail-vs-container">
+                        <span className="match-detail-vs-text">VS</span>
                     </div>
                 </div>
 
-                {/* Match Info */}
-                <div className="match-info">
-                    <div className="match-info-item">
-                        <Calendar className="match-icon" />
-                        <span>{match.date}</span>
-                    </div>
-                    <div className="match-info-item">
-                        <MapPin className="match-icon" />
-                        <span>{match.location}</span>
-                    </div>
+                <div className="match-detail-team">
+                    <TeamLogo logo={match.team2Logo} name={match.team2Name} isPrimary={false} />
+                    <p className="match-detail-team-name">{match.team2Name}</p>
+                </div>
+            </div>
+
+            {/* Match Info */}
+            <div className="match-detail-info">
+                <div className="match-detail-info-item">
+                    <Calendar className="match-detail-icon" />
+                    <span>{match.date}</span>
+                </div>
+                <div className="match-detail-info-item">
+                    <MapPin className="match-detail-icon" />
+                    <span>{match.location}</span>
                 </div>
             </div>
         </div>
     );
 }
+
 
 export default function MatchesCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -191,6 +190,7 @@ export default function MatchesCarousel() {
                                 <MatchCard key={match.id} match={match} />
                             ))}
                         </div>
+
 
                         <button
                             onClick={nextSlide}
