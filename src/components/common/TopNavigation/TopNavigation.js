@@ -4,27 +4,20 @@ import logo from "../../../assets/images/kotan_logo.jpeg";
 import "./TopNavigation.css";
 
 const TopNavigation = ({ onNavigate, currentPage }) => {
-  const [showTeamsDropdown, setShowTeamsDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const teams = [
-    "SENIORZY",
-    "TRAMPKARZ",
-    "MŁODZIK",
-    "ORLIK",
-    "ŻAK",
-    "SENIORKI",
-    "MŁODZICZKI",
-    "ORLICZKI"
-  ];
+  const handleNavClick = (page) => {
+    onNavigate(page);
+    setMobileMenuOpen(false);
+  };
 
   return (
     <nav className="navigation-sticky">
       <div className="navigation-container">
         <div className="navigation-content">
           {/* Logo */}
-          <button 
-            onClick={() => onNavigate('home')} 
+          <button
+            onClick={() => handleNavClick('home')}
             className="logo-button"
           >
             <div className="logo-circle">
@@ -37,58 +30,42 @@ const TopNavigation = ({ onNavigate, currentPage }) => {
 
           {/* Desktop Navigation */}
           <div className="desktop-nav">
-            <button 
-              onClick={() => onNavigate('home')}
+            <button
+              onClick={() => handleNavClick('home')}
               className={`nav-button ${currentPage === 'home' ? 'nav-button-active' : ''}`}
             >
               Strona główna
             </button>
 
             {/* Teams Dropdown */}
-            <div 
+            <div
               className="dropdown-wrapper"
-              onMouseEnter={() => setShowTeamsDropdown(true)}
-              onMouseLeave={() => setShowTeamsDropdown(false)}
             >
-              <button 
-                onClick={() => onNavigate('teams')}
-                className={`nav-button ${currentPage === 'teams' || showTeamsDropdown ? 'nav-button-active' : ''}`}
+              <button
+                onClick={() => handleNavClick('teams')}
+                className={`nav-button ${currentPage === 'teams' || currentPage === 'zespoly'}`}
               >
                 Zespoły
               </button>
-
-              {showTeamsDropdown && (
-                <div className="dropdown-menu">
-                  {teams.map((team, index) => (
-                    <button
-                      key={index}
-                      onClick={() => onNavigate('teams')}
-                      className="dropdown-item"
-                    >
-                      {team}
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
 
-            <button 
-              onClick={() => onNavigate('news')}
-              className={`nav-button ${currentPage === 'news' ? 'nav-button-active' : ''}`}
+            <button
+              onClick={() => handleNavClick('news')}
+              className={`nav-button ${currentPage === 'news' || currentPage === 'aktualnosci' ? 'nav-button-active' : ''}`}
             >
               Aktualności
             </button>
 
-            <button 
-              onClick={() => onNavigate('matches')}
-              className={`nav-button ${currentPage === 'matches' ? 'nav-button-active' : ''}`}
+            <button
+              onClick={() => handleNavClick('matches')}
+              className={`nav-button ${currentPage === 'matches' || currentPage === 'rozgrywki' ? 'nav-button-active' : ''}`}
             >
               Rozgrywki
             </button>
 
-            <button 
-              onClick={() => onNavigate('gallery')}
-              className={`nav-button ${currentPage === 'gallery' ? 'nav-button-active' : ''}`}
+            <button
+              onClick={() => handleNavClick('gallery')}
+              className={`nav-button ${currentPage === 'gallery' || currentPage === 'galeria' ? 'nav-button-active' : ''}`}
             >
               Galeria
             </button>
@@ -107,33 +84,33 @@ const TopNavigation = ({ onNavigate, currentPage }) => {
         {mobileMenuOpen && (
           <div className="mobile-nav">
             <div className="mobile-nav-content">
-              <button 
-                onClick={() => { onNavigate('home'); setMobileMenuOpen(false); }}
+              <button
+                onClick={() => handleNavClick('home')}
                 className={`mobile-nav-button ${currentPage === 'home' ? 'mobile-nav-button-active' : ''}`}
               >
                 Strona główna
               </button>
-              <button 
-                onClick={() => { onNavigate('teams'); setMobileMenuOpen(false); }}
-                className={`mobile-nav-button ${currentPage === 'teams' ? 'mobile-nav-button-active' : ''}`}
+              <button
+                onClick={() => handleNavClick('teams')}
+                className={`mobile-nav-button ${currentPage === 'teams' || currentPage === 'zespoly' ? 'mobile-nav-button-active' : ''}`}
               >
                 Zespoły
               </button>
-              <button 
-                onClick={() => { onNavigate('news'); setMobileMenuOpen(false); }}
-                className={`mobile-nav-button ${currentPage === 'news' ? 'mobile-nav-button-active' : ''}`}
+              <button
+                onClick={() => handleNavClick('news')}
+                className={`mobile-nav-button ${currentPage === 'news' || currentPage === 'aktualnosci' ? 'mobile-nav-button-active' : ''}`}
               >
                 Aktualności
               </button>
-              <button 
-                onClick={() => { onNavigate('matches'); setMobileMenuOpen(false); }}
-                className={`mobile-nav-button ${currentPage === 'matches' ? 'mobile-nav-button-active' : ''}`}
+              <button
+                onClick={() => handleNavClick('matches')}
+                className={`mobile-nav-button ${currentPage === 'matches' || currentPage === 'rozgrywki' ? 'mobile-nav-button-active' : ''}`}
               >
                 Rozgrywki
               </button>
-              <button 
-                onClick={() => { onNavigate('gallery'); setMobileMenuOpen(false); }}
-                className={`mobile-nav-button ${currentPage === 'gallery' ? 'mobile-nav-button-active' : ''}`}
+              <button
+                onClick={() => handleNavClick('gallery')}
+                className={`mobile-nav-button ${currentPage === 'gallery' || currentPage === 'galeria' ? 'mobile-nav-button-active' : ''}`}
               >
                 Galeria
               </button>
@@ -145,4 +122,4 @@ const TopNavigation = ({ onNavigate, currentPage }) => {
   );
 };
 
-export default TopNavigation;
+export default TopNavigation; 
